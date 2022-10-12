@@ -42,3 +42,26 @@ const getAverage2 = (...a: number[]): string => {
   let average = total / count;
   return "The average is " + average;
 };
+
+// * INTERFACES AND CLASSES
+
+interface Point {
+  x: number;
+  y: number;
+}
+
+interface Passenger {
+    name: string;
+}
+
+interface Vehicle {
+    currentLocation: Point;
+    travelTo(point: Point): void;
+}
+
+class Taxi implements Vehicle{
+    currentLocation: Point;
+    travelTo(point: Point): void {
+        console.log(`taksi X: ${point.x} Y: S${point.y} konumuna gidiyor.`);
+    }
+}

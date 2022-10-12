@@ -37,3 +37,11 @@ var getAverage2 = function () {
     var average = total / count;
     return "The average is " + average;
 };
+var Taxi = /** @class */ (function () {
+    function Taxi() {
+    }
+    Taxi.prototype.travelTo = function (point) {
+        console.log("taksi X: ".concat(point.x, " Y: S").concat(point.y, " konumuna gidiyor."));
+    };
+    return Taxi;
+}());
