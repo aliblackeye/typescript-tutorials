@@ -41,7 +41,11 @@ var Taxi = /** @class */ (function () {
     function Taxi() {
     }
     Taxi.prototype.travelTo = function (point) {
+        this.currentLocation = point;
         console.log("taksi X: ".concat(point.x, " Y: S").concat(point.y, " konumuna gidiyor."));
     };
     return Taxi;
 }());
+var taxi_1 = new Taxi();
+taxi_1.travelTo({ x: 1, y: 2 });
+console.log(taxi_1.currentLocation);

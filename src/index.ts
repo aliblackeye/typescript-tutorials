@@ -62,6 +62,11 @@ interface Vehicle {
 class Taxi implements Vehicle{
     currentLocation: Point;
     travelTo(point: Point): void {
+        this.currentLocation = point;
         console.log(`taksi X: ${point.x} Y: S${point.y} konumuna gidiyor.`);
     }
 }
+
+let taxi_1: Taxi = new Taxi();
+taxi_1.travelTo({x: 1, y: 2});
+console.log(taxi_1.currentLocation);
