@@ -55,23 +55,21 @@ interface Passenger {
 }
 
 interface Vehicle {
-    currentLocation: Point;
     travelTo(point: Point): void;
 }
 
 class Taxi implements Vehicle{
+    // private currentLocation: Point;
 
-    constructor(location: Point) {
-        this.currentLocation = location;
+    constructor(private location: Point) {
     }
 
-    currentLocation: Point;
     travelTo(point: Point): void {
         console.log(`Taksi X: ${point.x} Y: ${point.y} konumuna gidiyor.`);
-        this.currentLocation = point;
+        this.location = point;
     }
     getCurrentLocation() {
-        console.log(`Konum: X:${this.currentLocation.x} Y:${this.currentLocation.y}`);
+        console.log(`Konum: X:${this.location.x} Y:${this.location.y}`);
     }
 }
 

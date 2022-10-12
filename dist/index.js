@@ -38,15 +38,16 @@ var getAverage2 = function () {
     return "The average is " + average;
 };
 var Taxi = /** @class */ (function () {
+    // private currentLocation: Point;
     function Taxi(location) {
-        this.currentLocation = location;
+        this.location = location;
     }
     Taxi.prototype.travelTo = function (point) {
         console.log("Taksi X: ".concat(point.x, " Y: ").concat(point.y, " konumuna gidiyor."));
-        this.currentLocation = point;
+        this.location = point;
     };
     Taxi.prototype.getCurrentLocation = function () {
-        console.log("Konum: X:".concat(this.currentLocation.x, " Y:").concat(this.currentLocation.y));
+        console.log("Konum: X:".concat(this.location.x, " Y:").concat(this.location.y));
     };
     return Taxi;
 }());
