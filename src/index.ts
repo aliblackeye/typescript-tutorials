@@ -60,13 +60,22 @@ interface Vehicle {
 }
 
 class Taxi implements Vehicle{
+
+    constructor(location: Point) {
+        this.currentLocation = location;
+    }
+
     currentLocation: Point;
     travelTo(point: Point): void {
+        console.log(`Taksi X: ${point.x} Y: ${point.y} konumuna gidiyor.`);
         this.currentLocation = point;
-        console.log(`taksi X: ${point.x} Y: S${point.y} konumuna gidiyor.`);
+    }
+    getCurrentLocation() {
+        console.log(`Konum: X:${this.currentLocation.x} Y:${this.currentLocation.y}`);
     }
 }
 
-let taxi_1: Taxi = new Taxi();
+let taxi_1: Taxi = new Taxi({x:0, y:0});
+taxi_1.getCurrentLocation();
 taxi_1.travelTo({x: 1, y: 2});
-console.log(taxi_1.currentLocation);
+taxi_1.getCurrentLocation();
